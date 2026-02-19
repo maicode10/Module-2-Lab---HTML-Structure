@@ -1,8 +1,7 @@
-/* || Global Styles */
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 1;
+    padding: 0;
 }
 
 body {
@@ -10,24 +9,28 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* || Layout Container */
 .container {
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* || Card Styling */
 .card {
     background: #cfb1db;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* || Typography */
+.dark-mode .card {
+    background: #3b0a47;
+    color: #fff;
+}
+
 h1 {
     text-align: center;
     margin-bottom: 10px;
@@ -42,13 +45,11 @@ p {
     margin-bottom: 10px;
 }
 
-/* || Lists */
 ul {
     margin-left: 20px;
     margin-bottom: 10px;
 }
 
-/* || Hyperlinks */
 a {
     text-decoration: none;
     color: #7530c5;
@@ -58,7 +59,14 @@ a:hover {
     color: #430a64;
 }
 
-/* || Table Styling */
+.dark-mode a {
+    color: #c084fc;
+}
+
+.dark-mode a:hover {
+    color: #e9d5ff;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -75,7 +83,11 @@ th {
     color: rgb(255, 255, 255);
 }
 
-/* || Contact Form */
+.dark-mode td {
+    border-color: #9333ea;
+    color: #fff;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -83,21 +95,51 @@ form {
 }
 
 input, textarea {
-    padding: 8px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+    background-color: #4a0e5e;
+    color: #fff;
+    border-color: #9333ea;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+    color: #d8b4fe;
 }
 
 button {
-    padding: 10px;
+    padding: 12px;
     background-color: #702aaa;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
     background-color: #1e0046;
+}
+
+#themeToggle {
+    position: fixed;
+    top: 8px;
+    left: 16px;
+    z-index: 1000;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 footer {
@@ -117,4 +159,13 @@ header {
     margin: 15px auto;
     height: 200px;
     border-radius: 10px;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+
+.hidden {
+    display: none;
 }
