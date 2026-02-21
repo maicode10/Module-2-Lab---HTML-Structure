@@ -1,33 +1,44 @@
-document.addEventListener('DOMContentLoaded', function() {
+console.log("script.js loaded ✓");
 
-    const themeToggle = document.getElementById('themeToggle');
-    themeToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-        if (document.body.classList.contains('dark-mode')) {
-            themeToggle.textContent = '☀️ Light Mode';
-        } else {
-            themeToggle.textContent = '🌙 Dark Mode';
-        }
-    });
+// ── THEME TOGGLE ──────────────────────────────────────────────
+const themeToggle = document.getElementById("themeToggle");
+themeToggle.textContent = "Dark Mode";
 
-    const toggleSkills = document.getElementById('toggleSkills');
-    const skillsSection = document.getElementById('skillsSection');
-    toggleSkills.addEventListener('click', function() {
-        skillsSection.classList.toggle('hidden');
-    });
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "Light Mode";
+}
 
-    const submitBtn = document.getElementById('submitBtn');
-    submitBtn.addEventListener('click', function(event) {
-        event.preventDefault();
+themeToggle.addEventListener("click", function (e) {
+    e.stopPropagation();
+    const isDark = document.body.classList.toggle("dark-mode");
+    themeToggle.textContent = isDark ? "Light Mode" : "Dark Mode";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+});
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+// ── SKILLS TOGGLE ─────────────────────────────────────────────
+const toggleSkillsBtn = document.getElementById("toggleSkills");
+const skillsSection   = document.getElementById("skillsSection");
 
-        if (name === "" || email === "") {
-            alert("Please fill in all required fields.");
-        } else {
-            alert("Thank you! Your message has been received.");
-        }
-    });
+let skillsVisible = false;
+toggleSkillsBtn.textContent = "▼  Skills";
 
+toggleSkillsBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    skillsVisible = !skillsVisible;
+    skillsSection.classList.toggle("visible", skillsVisible);
+    toggleSkillsBtn.textContent = skillsVisible ? "▲  Skills" : "▼  Skills";
+});
+
+// ── FORM VALIDATION ───────────────────────────────────────────
+document.getElementById("submitBtn").addEventListener("click", function (e) {
+    e.preventDefault();
+    const name  = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    if (!name || !email) {
+        alert("Please fill in all required fields.");
+    } else {
+        alert("Thank you! Your message has been received.");
+    }
 });

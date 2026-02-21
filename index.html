@@ -2,23 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Online CV</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  
+
     <div class="container">
-    
+
         <header class="card">
             <button id="themeToggle">Toggle Dark Mode</button>
             <h1>Maira Lorraine Domaog</h1>
-            <p>IT Student | Web Systems and Technologies</p> 
+            <p>IT Student | Web Systems and Technologies</p>
         </header>
 
         <main>
+
             <section class="card">
                 <h2>About Me</h2>
-                <img src="images/profile.jpg" alt="Profile photo of Maira Lorraine Domaog" class="profile-img">
+                <div class="profile-img-wrapper">
+                    <img src="images/profile.jpg" alt="Profile photo of Maira Lorraine Domaog" class="profile-img">
+                </div>
                 <p>I am a 2nd Year IT student at USTP - CDO Campus, passionate about web development and technology. I am currently learning HTML, CSS, and JavaScript to build modern and responsive websites. In my free time, I enjoy singing and playing guitar and exploring new programming concepts. My goal is to become a skilled web developer and contribute to innovative digital solutions.</p>
                 <p>Email: <a href="mailto:domaog.mairalorraine@gmail.com">domaog.mairalorraine@gmail.com</a><br>
                 GitHub: <a href="https://github.com/maicode10" target="_blank">github.com/maicode10</a></p>
@@ -26,8 +30,7 @@
 
             <button id="toggleSkills">Show/Hide Skills</button>
 
-            <!-- Skills Section now toggles visibility -->
-            <section class="card hidden" id="skillsSection">
+            <section class="card" id="skillsSection">
                 <h2>Skills</h2>
                 <ul>
                     <li>Web Development
@@ -90,7 +93,7 @@
                     </li>
                 </ul>
             </section>
-            
+
             <section class="card">
                 <h2>Education</h2>
                 <table>
@@ -152,7 +155,6 @@
                     <input type="text" id="name" placeholder="Name" required>
                     <input type="email" id="email" placeholder="Email" required>
                     <textarea placeholder="Message" required></textarea>
-                    <!-- FIX: Added id="submitBtn" so JavaScript can find this button -->
                     <button type="submit" id="submitBtn">Send</button>
                 </form>
             </section>
