@@ -292,11 +292,11 @@ button:active { transform: translateY(0); box-shadow: none; }
     cursor: pointer;
     user-select: none;
     box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-    transition: none;
+    transition: background 0.25s, transform 0.15s, box-shadow 0.2s;
 }
 
-#themeToggle:hover { background: #1e0046; }
-#themeToggle:active { background: #1e0046; }
+#themeToggle:hover { background: #1e0046; transform: translateY(-2px); }
+#themeToggle:active { background: #1e0046; transform: translateY(0); }
 .dark-mode #themeToggle { background: #7c3aed; }
 .dark-mode #themeToggle:hover { background: #5b21b6; }
 
