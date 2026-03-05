@@ -1,4 +1,4 @@
-import Card from "./Card";
+import card from "./card";
 
 function Projects({ projects }) {
   return (

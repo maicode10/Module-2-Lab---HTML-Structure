@@ -1,4 +1,4 @@
-import Card from "./card";
+import card from "./card";
 
 function Hobbies({ hobbies }) {
   return (
