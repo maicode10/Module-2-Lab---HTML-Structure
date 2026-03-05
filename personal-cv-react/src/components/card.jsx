@@ -1,4 +1,4 @@
-function Card({ title, children }) {
+function card({ title, children }) {
   return (
     <section className="card">
       <h2>{title}</h2>
