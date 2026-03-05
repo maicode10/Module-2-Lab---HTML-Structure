@@ -1,9 +1,9 @@
 import profileImg from "../assets/profile.jpg";
+import Card from "./Card";
 
 function About() {
   return (
-    <section className="card">
-      <h2>About Me</h2>
+    <Card title="About Me">
       <div className="profile-img-wrapper">
         <img src={profileImg} alt="Profile photo of Maira Lorraine Domaog" className="profile-img" />
       </div>
@@ -12,7 +12,7 @@ function About() {
         Email: <a href="mailto:domaog.mairalorraine@gmail.com">domaog.mairalorraine@gmail.com</a><br />
         GitHub: <a href="https://github.com/maicode10" target="_blank">github.com/maicode10</a>
       </p>
-    </section>
+    </Card>
   );
 }
 

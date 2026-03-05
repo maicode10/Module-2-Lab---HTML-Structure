@@ -95,7 +95,7 @@ body::after {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 26px 30px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;   /* ← back to original */
     border-radius: 18px;
     border: 1px solid var(--card-border);
     box-shadow: 0 4px 24px var(--shadow);

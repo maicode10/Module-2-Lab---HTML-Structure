@@ -1,13 +1,16 @@
-function Projects() {
+import Card from "./Card";
+
+function Projects({ projects }) {
   return (
-    <section className="card">
-      <h2>Projects</h2>
+    <Card title="Projects">
       <ul>
-        <li><strong>Tetris Game</strong> - Tetris Game developed as part of a school project.</li>
-        <li><strong>Functional Calculator</strong> - A modern GUI calculator built with Java Swing.</li>
-        <li><strong>Currency Converter</strong> - A JavaFX desktop application for converting currencies.</li>
+        {projects.map((project, index) => (
+          <li key={index}>
+            <strong>{project.name}</strong> - {project.description}
+          </li>
+        ))}
       </ul>
-    </section>
+    </Card>
   );
 }
 

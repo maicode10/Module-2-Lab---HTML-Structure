@@ -1,14 +1,16 @@
-function Hobbies() {
+import Card from "./card";
+
+function Hobbies({ hobbies }) {
   return (
-    <section className="card">
-      <h2>Hobbies & Interests</h2>
+    <Card title="Hobbies & Interests">
       <ul>
-        <li><strong>Music</strong> - Singing and playing guitar</li>
-        <li><strong>Technology</strong> - Exploring new programming languages</li>
-        <li><strong>Creative Design</strong> - Creating digital artwork and web designs</li>
-        <li><strong>Learning</strong> - Watching tech tutorials</li>
+        {hobbies.map((hobby, index) => (
+          <li key={index}>
+            <strong>{hobby.name}</strong> - {hobby.description}
+          </li>
+        ))}
       </ul>
-    </section>
+    </Card>
   );
 }
 
