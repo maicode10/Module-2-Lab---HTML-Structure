@@ -1,5 +1,5 @@
 import { useState } from "react";
-import card from "./card";
+import Card from "./card";
 
 function Contact() {
   const [name, setName] = useState("");

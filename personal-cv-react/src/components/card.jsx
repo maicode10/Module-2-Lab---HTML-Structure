@@ -1,4 +1,4 @@
-function card({ title, children }) {
+function Card({ title, children }) {
   return (
     <section className="card">
       <h2>{title}</h2>
@@ -7,4 +7,4 @@ function card({ title, children }) {
   );
 }
 
-export default card;
+export default Card;

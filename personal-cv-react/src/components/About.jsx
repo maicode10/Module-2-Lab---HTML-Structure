@@ -1,5 +1,5 @@
 import profileImg from "../assets/profile.jpg";
-import card from "./card";
+import Card from "./Card";
 
 function About() {
   return (
