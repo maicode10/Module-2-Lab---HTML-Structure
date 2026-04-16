@@ -20,7 +20,7 @@ function Contact() {
   }
 
   return (
-    <div>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
       <input
         type="text"
         value={name}
